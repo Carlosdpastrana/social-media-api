@@ -7,4 +7,4 @@ const reactionSchema = new Schema({
   createdAt: { type: Date, default: Date.now, get: (timestamp) => new Date(timestamp).toLocaleString() },
 }, { toJSON: { getters: true }, id: false });
 
-module.exports = reactionSchema;
+module.exports = reactionSchema; // ✅ Exporting as a schema, NOT a model

@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
-const thoughtRoutes = require('./routes/thoughtRoutes');
+const thoughtRoutes = require('./routes/thoughtRoutes'); // ✅ This must be here!
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use('/api/users', userRoutes);
-app.use('/api/thoughts', thoughtRoutes);
+app.use('/api/thoughts', thoughtRoutes); // ✅ This must be here!
 
 mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGODB_URI, {
